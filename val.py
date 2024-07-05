@@ -70,14 +70,14 @@ def _get_class_metrics(validation_values, class_names):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Validate trained YOLO.')
     parser.add_argument('--model', type=str, required=True, help='Path to the trained model file.')
-    # /Users/irconde/Documents/UALR/projects/skin-lesion-classification/code/runs/classify/train/weights/best.pt
+    # /Users/arthi/Documents/UALR/projects/skin-lesion-classification/code/runs/classify/train/weights/best.pt
     args = parser.parse_args()
     model = YOLO(args.model)  # load a custom model
 
     # Validate the model
     metrics = model.val(
         save_json=True,
-        data="C:/Users/irconde/Documents/projects/skin-lesion-classification/dataset",
+        data="C:/Users/arthi/Documents/projects/skin-lesion-classification/dataset",
         plots=True,
         device='mps'
     )
